@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-/*
+/**
  * 0, 1, 2, 3, 4, 5, 6
  * 
 */
 public class String_12 {
 	public static void main(String[] args) throws IOException {
+		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		int inputNum = Integer.parseInt(reader.readLine());
@@ -27,6 +28,7 @@ public class String_12 {
 		}
 		System.out.println(result);
 	}
+	
 }
 //#****###**#####**#####**##**
 
@@ -56,3 +58,20 @@ public class String_12 {
 //	}
 //	System.out.println(result);
 //}
+
+
+//BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//
+//int inputNum = Integer.parseInt(reader.readLine());
+//String sr = reader.readLine();
+//
+//String binaryStr = "";
+//String result = "";
+//
+//for(int i = 0; i < inputNum; i++) {
+//	binaryStr = sr.substring(0, 7).replace("#", "1").replace("*", "0");
+//	int formatInt = Integer.parseInt(binaryStr, 2);
+//	result += (char)formatInt;
+//	sr = sr.substring(7);
+//}
+//System.out.println(result);
