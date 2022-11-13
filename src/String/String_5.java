@@ -5,21 +5,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class String_5 {
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
-		String inputStr = reader.readLine();
-		char[] temp = new char[inputStr.length()];
+		char[] inputStr = reader.readLine().toLowerCase().toCharArray();
+		int left = 0;
+		int right = inputStr.length - 1;
 		
-		for(int i = inputStr.length() - 1; i >= 0; i--) {
-			if((inputStr.charAt(i) >= 65 && inputStr.charAt(i) <= 90) || (inputStr.charAt(i) >= 97 && inputStr.charAt(i) <= 122)) {
-				temp[inputStr.length() - 1 - i] = inputStr.charAt(i);
-			} else {
-				temp[i] = inputStr.charAt(i);
+		for(int i = 0; i < inputStr.length - 1 ; i++) {
+			if(left < right) {
+				if(!Character.isAlphabetic(inputStr[i])) {
+					left++;
+				}
 			}
 		}
-		
-		System.out.println(temp);
 		
 	}
 }
