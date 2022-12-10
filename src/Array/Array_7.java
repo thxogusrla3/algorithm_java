@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/*
+10
+1 0 1 1 1 0 0 1 1 0
+*/
 public class Array_7 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
