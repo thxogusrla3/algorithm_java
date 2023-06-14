@@ -44,11 +44,7 @@ public class b2798 {
                 tempSum += tempArr[i];
             }
 
-            if(m - tempSum < 0) {
-                return ;
-            }
-
-            if(m - _result > m - tempSum) {
+            if(_result <  tempSum  && _result < tempSum ) {
                 _result = tempSum;
             }
 
