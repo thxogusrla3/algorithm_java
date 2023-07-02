@@ -35,7 +35,7 @@ public class LinkedList {
     public void insertNode(ListNode preNode, String data) {
         //삽입할 노드 생성
         ListNode newNode = new ListNode(data);
-        newNode.link = preNode;
+        newNode.link = preNode.link;
         preNode.link = newNode;
     }
 
