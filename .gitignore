@@ -26,3 +26,8 @@ hs_err_pid*
 .classpath
 .project
 .cproject
+
+.idea
+*.iml
+out
+gen
