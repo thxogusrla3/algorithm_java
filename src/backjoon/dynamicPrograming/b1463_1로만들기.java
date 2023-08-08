@@ -16,7 +16,9 @@ public class b1463_1로만들기 {
         int val = n;
 
         dp = new Integer[n + 1];
-        dp[0] = dp[1] = 0;  //dp[1] = 0; -> 1은 이미 1 이니까 연산이 필요없지.
+
+        //dp[1] = 0; -> 1은 이미 1 이니까 연산이 필요없지. (기저 상태 파악하기: 가장 작은 문제의 상태)
+        dp[0] = dp[1] = 0;
 
         System.out.print(recur(n));
     }
@@ -40,7 +42,3 @@ public class b1463_1로만들기 {
         return dp[n];
     }
 }
-/*
-* 점화식을 세워야한다고 했는데..
-* 1 * 3 >
-* */
