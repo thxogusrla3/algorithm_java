@@ -6,7 +6,8 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /*
-https://www.acmicpc.net/problems/3020
+https://www.acmicpc.net/problem/3020
+https://lotuslee.tistory.com/108
 6 7
 1
 5
