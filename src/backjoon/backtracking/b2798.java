@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.backtracking;
 
 import java.util.Arrays;
 import java.util.Scanner;

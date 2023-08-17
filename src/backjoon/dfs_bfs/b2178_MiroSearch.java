@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.dfs_bfs;
 
 import java.awt.*;
 import java.io.BufferedReader;

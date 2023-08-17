@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.prefixSum;
 
 import java.awt.*;
 import java.io.BufferedReader;
