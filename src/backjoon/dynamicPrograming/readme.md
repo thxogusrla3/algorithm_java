@@ -72,8 +72,10 @@ int fib(int n)
 ```
 // 최대 범위 N보다 1 크게 사용.
 // memo[0] 초기값 상태 0으로 비워둘것임.
+//메모이제이션
 int memo[101];
 
+//기저상태
 memo[1] = 1;
 memo[2] = 1;
 
@@ -82,12 +84,18 @@ int fib(int n)
   {
     
     for(int i = 3; i <=n; i++){
-      memo[i] = memo[i-1] + memo[i-2];
+      memo[i] = memo[i-1] + memo[i-2]; // f(n) = f(i-1) + f(i-2) 점화식을 구함
     }
     return memo[n];
   }
 
 ```
+
+## DP 선행 작업
+1. 기저상태 파악할 것(가장 작은 문제의 상태)
+2. 메모이제이션(반복되는 계산을 저장할 배열)
+3. 점화식 구하기
+4. Top - Bottom(재귀) / Bottom - Top(for) 
 
 참고
 - https://velog.io/@gillog/%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming#%E2%99%82%EF%B8%8F-%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8-%E2%99%82%EF%B8%8F

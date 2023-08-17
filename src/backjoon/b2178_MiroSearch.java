@@ -22,9 +22,8 @@ public class b2178_MiroSearch {
     static int N, M;
     static int[][] map;
     static boolean[][] visited;
-    static int result = Integer.MAX_VALUE;
-    static int cnt = 0;
     static Queue<Point> q = new LinkedList<Point>();
+    static int result = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -44,12 +43,18 @@ public class b2178_MiroSearch {
             }
         }
 
-        q.add(new Point(0, 0));
+//        q.add(new Point(0, 0));
         visited[0][0] = true;
 
-        bfs(0, 0);
-
+//        bfs(0, 0);
+        dfs(0, 0);
         System.out.println(map[N-1][M-1]);
+
+        for(int i = 0 ; i < map.length; i++) {
+            System.out.println(Arrays.toString(map[i]));
+        }
+
+        System.out.println(result);
     }
 
     //visited = [동, 서, 남, 북]
@@ -67,12 +72,36 @@ public class b2178_MiroSearch {
                 if(checkPoint(nowX, nowY) && visited[nowX][nowY] == false && map[nowX][nowY] != 0) {
                     q.add(new Point(nowX, nowY));
                     visited[nowX][nowY] = true;
-                    map[nowX][nowY] = map[tp.x][tp.y] + 1; //다음에가 모든 조건을 만족할 때 전 값에 1을 더해 값을 셋팅한다.
-                    bfs(nowX, nowY);                       //그래야 다음에 돌아와서 다른 인접했던걸 탐색할 때 기존꺼를 알 수 있으니까
+
+                    map[nowX][nowY] = Math.min(map[tp.x][tp.y] + 1, map[nowX][nowY]); //다음에가 모든 조건을 만족할 때 전 값에 1을 더해 값을 셋팅한다.
+                    //그래야 다음에 돌아와서 다른 인접했던걸 탐색할 때 기존꺼를 알 수 있으니까
                 }
             }
         }
+    }
 
+    //
+    public static void dfs(int x, int y) {
+        int[] dx = {-1, 1, 0, 0};
+        int[] dy = {0, 0, -1, 1};
+
+        visited[x][y] = true;
+
+        for(int i = 0 ; i < 4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+
+            if(checkPoint(nx, ny) && visited[nx][ny] == false && map[nx][ny] != 0) {
+                if(nx == N-1 && ny == M-1) {
+                    result = Math.min(result, map[x][y] + 1);
+                }
+                map[nx][ny] = map[x][y] + 1;
+                visited[nx][ny] = true;
+                dfs(nx, ny);
+                visited[nx][ny] = false;
+                map[nx][ny] = 1;
+            }
+        }
     }
 
     public static boolean checkPoint(int x, int y) {

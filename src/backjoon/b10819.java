@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
+ https://www.acmicpc.net/problem/10819 차이를최대로(기본)
 |A[n] - A[n+1]| + |A[n+1] - A[n+2]| ..
 Input
     6
