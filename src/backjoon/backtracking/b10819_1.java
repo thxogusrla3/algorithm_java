@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.backtracking;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
